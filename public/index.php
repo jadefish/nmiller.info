@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 chdir(__DIR__);
 
 define("PRIVATE_ROOT", realpath(__DIR__ . "/.."));
