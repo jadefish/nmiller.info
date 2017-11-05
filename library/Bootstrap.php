@@ -13,9 +13,7 @@ final class Bootstrap
     private static $env = null;
     private static $config = null;
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 
     private static function loadEnv(string $filename): string
     {

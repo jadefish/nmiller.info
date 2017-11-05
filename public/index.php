@@ -2,9 +2,9 @@
 
 chdir(__DIR__);
 
-define("APPLICATION_PATH", realpath(__DIR__ . "/../application"));
-define("LIBRARY_PATH", realpath(__DIR__ . "/../library"));
 define("PRIVATE_ROOT", realpath(__DIR__ . "/.."));
+define("APPLICATION_PATH", realpath(PRIVATE_ROOT . "/application"));
+define("LIBRARY_PATH", realpath(PRIVATE_ROOT . "/library"));
 define("PUBLIC_ROOT", realpath(__DIR__));
 
 require_once LIBRARY_PATH . "/utilities/path.php";
