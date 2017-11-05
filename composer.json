@@ -1,0 +1,13 @@
+{
+    "name": "nick/nmiller.info",
+    "description": "nmiller.info personal website",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nick Miller",
+            "email": "nick@nmiller.info"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
