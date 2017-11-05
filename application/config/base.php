@@ -1,6 +1,11 @@
 <?php
 
-$date = date("Y-m-d");
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
 
 return [
     "php" => [
@@ -10,7 +15,7 @@ return [
             "%s/logs/%s_%s.log",
             PRIVATE_ROOT,
             ENVIRONMENT,
-            $date
+            date("Y-m-d")
         )
     ],
     "database" => [
