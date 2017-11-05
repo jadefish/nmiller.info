@@ -7,11 +7,13 @@ define("LIBRARY_PATH", realpath(__DIR__ . "/../library"));
 define("PRIVATE_ROOT", realpath(__DIR__ . "/.."));
 define("PUBLIC_ROOT", realpath(__DIR__));
 
+require_once LIBRARY_PATH . "/utilities/path.php";
+
 // Autoload unprefixed class names from /library:
-$autoloader = require LIBRARY_PATH . "/utilities/autoloader.php";
+$autoloader = require path(LIBRARY_PATH, "/utilities/autoloader.php");
 spl_autoload_register($autoloader(LIBRARY_PATH));
 
 Bootstrap::init([
-    "envFile" => PRIVATE_ROOT . "/.env",
-    "configDir" => APPLICATION_PATH . "/config"
+    "envFile" => path(PRIVATE_ROOT, ".env"),
+    "configDir" => path(APPLICATION_PATH, "config")
 ]);

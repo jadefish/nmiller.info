@@ -1,6 +1,6 @@
 <?php
 
-require LIBRARY_PATH . "/utilities/path.php";
+require_once LIBRARY_PATH . "/utilities/path.php";
 require path(LIBRARY_PATH, "/utilities/array_merge_recursive_distinct.php");
 
 final class Bootstrap
