@@ -14,6 +14,6 @@
         "friendsofphp/php-cs-fixer": "^2.8"
     },
     "scripts": {
-        "fix": "./vendor/bin/php-cs-fixer --allow-risky=yes fix "
+        "fix": "./vendor/bin/php-cs-fixer --allow-risky=yes --config=.php_cs.dist fix "
     }
 }
