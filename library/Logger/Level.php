@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 namespace Logger;
 
 final class Level
@@ -13,5 +20,7 @@ final class Level
     const ALERT = 6;
     const EMERGENCY = 7;
 
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 }

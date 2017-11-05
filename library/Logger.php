@@ -1,13 +1,19 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 require __DIR__ . "/utilities/stringify.php";
 
-use Logger\{AnsiAttribute, Level as LogLevel};
+use Logger\AnsiAttribute;
+use Logger\Level as LogLevel;
 
 final class Logger
 {
-    private function __construct() {}
-
     private static $attributesMap = [
         LogLevel::DEBUG => [
             AnsiAttribute::BACKGROUND_DEFAULT,
@@ -38,6 +44,10 @@ final class Logger
         LogLevel::ERROR => E_ERROR
     ];
 
+    private function __construct()
+    {
+    }
+
     private static function shouldLog(int $level): bool
     {
         if (!array_key_exists($level, self::$levelConstantsMap)) {
@@ -53,14 +63,14 @@ final class Logger
         int $level,
         $message = "",
         array $arguments = []
-    ) {
+    ): void {
         $args = array_map("stringify", $arguments);
 
         if (is_string($message)
-            && strpos($message, "%") !== false
+            && mb_strpos($message, "%") !== false
             && count($args) > 0) {
             $message = vsprintf($message, $args);
-        } else if (count($args) > 0) {
+        } elseif (count($args) > 0) {
             $message = stringify($message) . ", " . implode(
                 ", ",
                 array_map("stringify", $args)
@@ -78,7 +88,7 @@ final class Logger
         error_log($message);
     }
 
-    public static function debug($message = "", ...$arguments)
+    public static function debug($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
         if (self::shouldLog(LogLevel::DEBUG)) {
@@ -86,17 +96,17 @@ final class Logger
         }
     }
 
-    public static function info($message = "", ...$arguments)
+    public static function info($message = "", ...$arguments): void
     {
         self::emit(LogLevel::INFO, $message, $arguments);
     }
 
-    public static function log($message = "", ...$arguments)
+    public static function log($message = "", ...$arguments): void
     {
         self::emit(LogLevel::INFO, $message, $arguments);
     }
 
-    public static function notice($message = "", ...$arguments)
+    public static function notice($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
         if (self::shouldLog(LogLevel::NOTICE)) {
@@ -104,7 +114,7 @@ final class Logger
         }
     }
 
-    public static function warning($message = "", ...$arguments)
+    public static function warning($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_WARNING:
         if (self::shouldLog(LogLevel::WARNING)) {
@@ -112,7 +122,7 @@ final class Logger
         }
     }
 
-    public static function error($message = "", ...$arguments)
+    public static function error($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_ERROR:
         if (self::shouldLog(LogLevel::ERROR)) {

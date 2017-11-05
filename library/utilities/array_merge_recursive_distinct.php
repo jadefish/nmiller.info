@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 // http://php.net/manual/en/function.array-merge-recursive.php
 function array_merge_recursive_distinct(array &$array1, array &$array2): array
 {
@@ -9,12 +16,12 @@ function array_merge_recursive_distinct(array &$array1, array &$array2): array
         if (is_array($value)
             && isset($merged[$key])
             && is_array($merged[$key])) {
-                $merged[$key] = array_merge_recursive_distinct(
+            $merged[$key] = array_merge_recursive_distinct(
                     $merged[$key],
                     $value
                 );
         } else {
-            $merged [$key] = $value;
+            $merged[$key] = $value;
         }
     }
 

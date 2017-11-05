@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 namespace Logger;
 
 final class AnsiAttribute
@@ -45,5 +52,7 @@ final class AnsiAttribute
     const BACKGROUND_BRIGHT_CYAN = "106";
     const BACKGROUND_BRIGHT_WHITE = "107";
 
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 }

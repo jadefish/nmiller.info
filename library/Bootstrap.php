@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * nmiller.info
+ * (c) 2017 Nick Miller
+ */
+
+declare(strict_types=1);
+
 require_once LIBRARY_PATH . "/utilities/path.php";
 require path(LIBRARY_PATH, "/utilities/array_merge_recursive_distinct.php");
 
@@ -13,7 +20,9 @@ final class Bootstrap
     private static $env = null;
     private static $config = null;
 
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     private static function loadEnv(string $filename): string
     {
@@ -34,14 +43,10 @@ final class Bootstrap
         return array_merge_recursive_distinct($baseConfig, $envConfig);
     }
 
-    public static function init(array $options)
+    public static function init(array $options): void
     {
-        $envFile = isset($options["envFile"])
-            ? $options["envFile"]
-            : self::DEFAULT_ENV_FILENAME;
-        $configDir = isset($options["configDir"])
-            ? $options["configDir"]
-            : self::DEFAULT_ENV_FILENAME;
+        $envFile = $options["envFile"] ?? self::DEFAULT_ENV_FILENAME;
+        $configDir = $options["configDir"] ?? self::DEFAULT_ENV_FILENAME;
 
         self::$env = self::loadEnv($envFile);
 
@@ -54,7 +59,7 @@ final class Bootstrap
             $phpSettings = self::$config[self::PHP_SETTINGS_KEY];
 
             foreach ($phpSettings as $key => $value) {
-                ini_set($key, $value);
+                ini_set($key, (string)$value);
             }
         }
     }
