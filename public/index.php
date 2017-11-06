@@ -21,9 +21,13 @@ $autoloader = require path(LIBRARY_PATH, "/utilities/autoloader.php");
 spl_autoload_register($autoloader(LIBRARY_PATH));
 spl_autoload_register($autoloader(PRIVATE_ROOT));
 
-use \Framework\{Bootstrap, Logger};
+use \Framework\{Bootstrap, Logger, Router};
 
 Bootstrap::init([
     "envFile" => path(PRIVATE_ROOT, ".env"),
     "configDir" => path(APPLICATION_PATH, "config")
 ]);
+
+$router = (new Router())
+    ->add("index", "/test/@id:(\d+)", [Application\Controllers\IndexController::class, "index"])
+    ->start();
