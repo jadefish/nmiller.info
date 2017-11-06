@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+namespace Framework;
+
 require_once LIBRARY_PATH . "/utilities/path.php";
 require path(LIBRARY_PATH, "/utilities/array_merge_recursive_distinct.php");
 

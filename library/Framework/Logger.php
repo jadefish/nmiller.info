@@ -7,41 +7,43 @@
 
 declare(strict_types=1);
 
-require __DIR__ . "/utilities/stringify.php";
+namespace Framework;
 
-use Logger\AnsiAttribute;
-use Logger\Level as LogLevel;
+require LIBRARY_PATH . "/utilities/stringify.php";
+
+use \Framework\Logger\AnsiAttribute;
+use \Framework\Logger\Level;
 
 final class Logger
 {
     private static $attributesMap = [
-        LogLevel::DEBUG => [
+        Level::DEBUG => [
             AnsiAttribute::BACKGROUND_DEFAULT,
             AnsiAttribute::FOREGROUND_BLUE
         ],
-        LogLevel::INFO => [
+        Level::INFO => [
             AnsiAttribute::BACKGROUND_DEFAULT,
             AnsiAttribute::FOREGROUND_DEFAULT
         ],
-        LogLevel::NOTICE => [
+        Level::NOTICE => [
             AnsiAttribute::BACKGROUND_DEFAULT,
             AnsiAttribute::FOREGROUND_MAGENTA
         ],
-        LogLevel::WARNING => [
+        Level::WARNING => [
             AnsiAttribute::BACKGROUND_DEFAULT,
             AnsiAttribute::FOREGROUND_YELLOW
         ],
-        LogLevel::ERROR => [
+        Level::ERROR => [
             AnsiAttribute::BACKGROUND_DEFAULT,
             AnsiAttribute::FOREGROUND_RED
         ]
     ];
 
     private static $levelConstantsMap = [
-        LogLevel::DEBUG => E_NOTICE,
-        LogLevel::NOTICE => E_NOTICE,
-        LogLevel::WARNING => E_WARNING,
-        LogLevel::ERROR => E_ERROR
+        Level::DEBUG => E_NOTICE,
+        Level::NOTICE => E_NOTICE,
+        Level::WARNING => E_WARNING,
+        Level::ERROR => E_ERROR
     ];
 
     private function __construct()
@@ -91,42 +93,42 @@ final class Logger
     public static function debug($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
-        if (self::shouldLog(LogLevel::DEBUG)) {
-            self::emit(LogLevel::DEBUG, $message, $arguments);
+        if (self::shouldLog(Level::DEBUG)) {
+            self::emit(Level::DEBUG, $message, $arguments);
         }
     }
 
     public static function info($message = "", ...$arguments): void
     {
-        self::emit(LogLevel::INFO, $message, $arguments);
+        self::emit(Level::INFO, $message, $arguments);
     }
 
     public static function log($message = "", ...$arguments): void
     {
-        self::emit(LogLevel::INFO, $message, $arguments);
+        self::emit(Level::INFO, $message, $arguments);
     }
 
     public static function notice($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
-        if (self::shouldLog(LogLevel::NOTICE)) {
-            self::emit(LogLevel::NOTICE, $message, $arguments);
+        if (self::shouldLog(Level::NOTICE)) {
+            self::emit(Level::NOTICE, $message, $arguments);
         }
     }
 
     public static function warning($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_WARNING:
-        if (self::shouldLog(LogLevel::WARNING)) {
-            self::emit(LogLevel::WARNING, $message, $arguments);
+        if (self::shouldLog(Level::WARNING)) {
+            self::emit(Level::WARNING, $message, $arguments);
         }
     }
 
     public static function error($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_ERROR:
-        if (self::shouldLog(LogLevel::ERROR)) {
-            self::emit(LogLevel::ERROR, $message, $arguments);
+        if (self::shouldLog(Level::ERROR)) {
+            self::emit(Level::ERROR, $message, $arguments);
         }
     }
 }

@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Logger;
+namespace Framework\Logger;
 
 final class AnsiAttribute
 {
