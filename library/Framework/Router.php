@@ -39,7 +39,7 @@ final class Router extends Emitter
         }
 
         // TODO: sane default?
-        throw new Exception("Invalid route specified");
+        throw new \Exception("Invalid route specified");
     }
 
     public function add(string $name, string $pattern, $handler): Router
