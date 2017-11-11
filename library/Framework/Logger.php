@@ -61,7 +61,7 @@ final class Logger
         return (error_reporting() & $level) === $level;
     }
 
-    private static function emit(
+    private static function write(
         int $level,
         $message = "",
         array $arguments = []
@@ -94,25 +94,25 @@ final class Logger
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
         if (self::shouldLog(Level::DEBUG)) {
-            self::emit(Level::DEBUG, $message, $arguments);
+            self::write(Level::DEBUG, $message, $arguments);
         }
     }
 
     public static function info($message = "", ...$arguments): void
     {
-        self::emit(Level::INFO, $message, $arguments);
+        self::write(Level::INFO, $message, $arguments);
     }
 
     public static function log($message = "", ...$arguments): void
     {
-        self::emit(Level::INFO, $message, $arguments);
+        self::write(Level::INFO, $message, $arguments);
     }
 
     public static function notice($message = "", ...$arguments): void
     {
         // Only log if the `error_reporting` directive includes E_NOTICE:
         if (self::shouldLog(Level::NOTICE)) {
-            self::emit(Level::NOTICE, $message, $arguments);
+            self::write(Level::NOTICE, $message, $arguments);
         }
     }
 
@@ -120,7 +120,7 @@ final class Logger
     {
         // Only log if the `error_reporting` directive includes E_WARNING:
         if (self::shouldLog(Level::WARNING)) {
-            self::emit(Level::WARNING, $message, $arguments);
+            self::write(Level::WARNING, $message, $arguments);
         }
     }
 
@@ -128,7 +128,7 @@ final class Logger
     {
         // Only log if the `error_reporting` directive includes E_ERROR:
         if (self::shouldLog(Level::ERROR)) {
-            self::emit(Level::ERROR, $message, $arguments);
+            self::write(Level::ERROR, $message, $arguments);
         }
     }
 }
