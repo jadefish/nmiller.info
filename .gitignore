@@ -4,6 +4,6 @@
 /vendor
 /.env
 /logs/*
-/database/*
+/storage/*
 
 !*/.keep
