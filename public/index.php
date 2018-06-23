@@ -14,18 +14,17 @@ require '../vendor/autoload.php';
 $app = new \Elu\Application(__DIR__ . '/../');
 $app->bootstrap();
 
-$handler = function (string $var = 'default', int $var2 = 0) {
-    $contents = scandir(app()->baseDir() . '/storage');
-    $links = array_map(function (string $f): string {
-        return "<li><a href=\"{$f}\">{$f}</a>";
-    }, array_filter($contents, function (string $f): bool {
-        return $f[0] !== '.';
-    }));
-
-    echo '<ul>' . implode("\n", $links) . '</ul>';
+$handler = function (int $var1, string $var2) {
+    var_dump(request(), get_defined_vars());
 };
 
 $router = $app->router;
-$router->get('/{path:any}', $handler);
+$router->post('/foo/bar/baz/{var1:int}/{var2:string}', function () {
+    echo 'POST';
+});
+$router->delete('/foo/bar/baz/{var1:int}/{var2:string}', $handler);
+$router->get('/', function () {
+    echo "home";
+});
 
 $app->run();
