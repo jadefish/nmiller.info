@@ -1,6 +1,11 @@
 .DS_Store
 /.php_cs.cache
 
+*.sublime_project
+*.sublime_workspace
+/.vscode
+/.idea
+
 /vendor
 /.env
 /logs/*
