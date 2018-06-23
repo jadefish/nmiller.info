@@ -12,7 +12,20 @@ chdir(__DIR__);
 require '../vendor/autoload.php';
 
 $app = new \Elu\Application(__DIR__ . '/../');
-$app->withRoutes('application/routes.php');
 $app->bootstrap();
 
-var_dump($app);
+$handler = function (string $var = 'default', int $var2 = 0) {
+    $contents = scandir(app()->baseDir() . '/storage');
+    $links = array_map(function (string $f): string {
+        return "<li><a href=\"{$f}\">{$f}</a>";
+    }, array_filter($contents, function (string $f): bool {
+        return $f[0] !== '.';
+    }));
+
+    echo '<ul>' . implode("\n", $links) . '</ul>';
+};
+
+$router = $app->router;
+$router->get('/{path:any}', $handler);
+
+$app->run();
