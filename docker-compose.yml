@@ -6,6 +6,7 @@ services:
     build: ./docker/nginx
     container_name: web
     volumes:
+      - ./logs:/logs
       - ./:/app:ro
     ports:
       - 8000:80
@@ -14,6 +15,7 @@ services:
     container_name: php-fpm
     restart: always
     volumes:
+      - ./logs:/logs
       - ./:/app
       - ../elu:/elu  # temporary
     expose:
