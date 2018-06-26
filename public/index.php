@@ -11,18 +11,21 @@ chdir(__DIR__);
 
 require '../vendor/autoload.php';
 
+define('APP_START', microtime(true));
+
+register_shutdown_function(function () {
+    define('APP_END', microtime(true));
+
+    error_log(sprintf(
+        "Done in %s ms",
+        number_format((APP_END - APP_START) * 1000, 2)
+    ));
+});
+
 $app = new \Elu\Application(__DIR__ . '/../');
 $app->bootstrap();
 
-$handler = function (int $var1, string $var2) {
-    var_dump(request(), get_defined_vars());
-};
-
 $router = $app->router;
-$router->post('/foo/bar/baz/{var1:int}/{var2:string}', function () {
-    echo 'POST';
-});
-$router->delete('/foo/bar/baz/{var1:int}/{var2:string}', $handler);
 $router->get('/', function () {
     echo "home";
 });
