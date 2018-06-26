@@ -27,7 +27,9 @@ $app->bootstrap();
 
 $router = $app->router;
 $router->get('/', function () {
-    echo "home";
+    return view('index', [
+        'method' => __METHOD__
+    ]);
 });
 
 $app->run();
