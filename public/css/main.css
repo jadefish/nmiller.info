@@ -1,0 +1,98 @@
+:root {
+    --background: rgb(250, 248, 244);
+    --foreground: rgb(40, 40, 40);
+    --accent: rgb(70, 154, 225);
+    --border: rgb(204, 204, 204);
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: calc(20 / 14);
+    background: var(--background);
+    color: var(--foreground);
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav {
+    background: var(--foreground);
+}
+
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul > li > a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em 0.80em;
+    color: var(--background);
+}
+
+nav > ul > li > a:hover {
+    background: var(--accent);
+}
+
+.brand {
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border);
+}
+
+main {
+    max-width: 85vw;
+    margin: 0 auto 10vh;
+    min-height: 74vh;
+}
+
+footer {
+    display: flex;
+    margin: 1rem;
+}
+
+footer .footer-right {
+    flex: 1 0 auto;
+    margin-left: 1em;
+    text-align: right;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--background);
+    background: var(--accent);
+}
+
+.github-link:hover {
+    background: none;
+}
+
+.github-link > img {
+    width: 1.50em;
+    height: 1.50em;
+}
+
+@media only screen and (min-width: 60em) {
+    main {
+        max-width: 67vw;
+    }
+}
