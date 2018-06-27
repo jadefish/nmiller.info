@@ -9,6 +9,6 @@
 /vendor
 /.env
 /logs/*
-/storage/*
+/storage/cache/*
 
 !*/.keep
