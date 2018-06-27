@@ -17,7 +17,6 @@ services:
     volumes:
       - ./logs:/logs
       - ./:/app
-      - ../elu:/elu  # temporary
     expose:
       - 9000
     environment:
@@ -28,5 +27,4 @@ services:
     container_name: composer
     volumes:
       - ./:/app
-      - ../elu:/elu  # temporary
     command: install
