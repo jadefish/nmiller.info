@@ -1,3 +1,8 @@
+@extends('layouts.app')
+@section('title', 'Home')
+
+@section('content')
+
 ## About
 You've reached the personal website of Nick Miller. I'm a back end developer
 currently working at [MacUpdate.com](https://www.macupdate.com).
@@ -27,3 +32,4 @@ PDF version is always available [here](#).
 
 ## Get at me
 * LinkedIn: [https://linkedin.com/in/nickjm](https://linkedin.com/in/nickjm)
+@endsection

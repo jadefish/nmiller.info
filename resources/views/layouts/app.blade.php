@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>nmiller.info</title>
+    <title>@yield('title') - nmiller.info</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -14,11 +15,13 @@
             </ul>
         </nav>
     </header>
-    <main><?=$this->content?></main>
+    <main>
+        @yield('content')
+    </main>
     <hr>
     <footer>
         <div class="footer-left">
-            <span>&copy; <?=date('Y')?> Nick Miller</span>
+            <span>&copy; 2017 - {{ date('Y') }} Nick Miller</span>
         </div>
         <div class="footer-right">
             <a href="https://github.com/jadefish/nmiller.info" class="github-link"><img src="/images/github.png" alt="GitHub logo"></a>
