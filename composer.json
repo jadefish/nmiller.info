@@ -28,8 +28,7 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/",
-            "database/"
+            "tests/"
         ]
     },
     "minimum-stability": "stable",
