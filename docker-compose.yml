@@ -5,6 +5,8 @@ services:
   web:
     build: ./docker/nginx
     container_name: web
+    volumes:
+      - ./:/app:ro
     ports:
       - 8000:80
   php-fpm:
