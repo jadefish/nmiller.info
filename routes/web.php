@@ -1,4 +1,4 @@
 <?php
 
 $router->get('/', 'IndexController@index');
-$router->get('/{path:.*}', 'IndexController@document');
+$router->get('/{path:.+}', 'IndexController@document');
