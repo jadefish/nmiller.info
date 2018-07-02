@@ -51,7 +51,8 @@ nav > ul > li > a {
     color: var(--background);
 }
 
-nav > ul > li > a:hover {
+nav > ul > li > a:hover,
+nav > ul > li > a:active {
     background: var(--accent);
 }
 
@@ -91,7 +92,8 @@ a {
     color: var(--accent);
 }
 
-a:hover {
+a:hover,
+a:active {
     color: var(--background);
     background: var(--accent);
 }
