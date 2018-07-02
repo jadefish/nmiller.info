@@ -11,6 +11,12 @@ class IndexController extends Controller
 
     public function document(string $path)
     {
-        // TODO
+        $factory = app('view');
+
+        if (!$factory->exists($path)) {
+            abort(404);
+        }
+
+        return $factory->make($path);
     }
 }
