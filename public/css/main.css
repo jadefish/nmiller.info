@@ -5,6 +5,14 @@
     --border: rgb(204, 204, 204);
 }
 
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html {
     font-size: 100%;
 }
@@ -26,6 +34,7 @@ img {
 
 nav {
     background: var(--foreground);
+    color: var(--background);
 }
 
 nav > ul {
@@ -50,6 +59,11 @@ nav > ul > li > a:hover {
     font-weight: 700;
 }
 
+ul > li > p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 hr {
     border: none;
     height: 1px;
@@ -59,7 +73,7 @@ hr {
 main {
     max-width: 85vw;
     margin: 0 auto 10vh;
-    min-height: 74vh;
+    min-height: 73.5vh;
 }
 
 footer {
