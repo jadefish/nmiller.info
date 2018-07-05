@@ -1,7 +1,7 @@
 :root {
     --background: rgb(250, 248, 244);
     --foreground: rgb(40, 40, 40);
-    --accent: rgb(70, 154, 225);
+    --accent: rgb(21, 101, 193);
     --border: rgb(204, 204, 204);
 }
 
@@ -51,8 +51,8 @@ nav > ul > li > a {
     color: var(--background);
 }
 
-nav > ul > li > a:hover,
-nav > ul > li > a:active {
+nav > ul > li > a:hover {
+    color: var(--background);
     background: var(--accent);
 }
 
@@ -90,12 +90,6 @@ footer .footer-right {
 
 a {
     color: var(--accent);
-}
-
-a:hover,
-a:active {
-    color: var(--background);
-    background: var(--accent);
 }
 
 .github-link:hover {
