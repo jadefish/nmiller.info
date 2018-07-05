@@ -22,12 +22,8 @@ tearing apart _something_.
 Most of my projects are available [on GitHub](https://github.com/jadefish),
 including the source for this website.
 
-## Résumé
-My résumé is written in LaTeX. An up-to-date prepared PDF version is always
-available [here](#), and the source is available
-[on GitHub](https://github.com/jadefish/resume).
-
 ## Touch base
 * LinkedIn: [https://linkedin.com/in/nickjm](https://linkedin.com/in/nickjm)
+* Stack Overflow: [https://stackoverflow.com/cv/nickjmiller](https://stackoverflow.com/cv/nickjmiller)
 
 @endsection
