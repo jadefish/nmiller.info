@@ -5,7 +5,7 @@
 
 # Projects
 ## Active
-* [nmiller.info](/projects/nmiller.info): personal website
+* [nmiller.info](/projects/nmiller-info): personal website
 * [alus](/projects/alus): Lua web application framework
 * [solarized-simple](/projects/solarized-simple): Solarized TextMate theme
   with fewer colors
