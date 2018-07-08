@@ -30,4 +30,7 @@ background.
 
 Naturally, since pre-Vista Windows does not feature Aero, ColorChanger is
 compatible with Windows Vista or later.
+
+## Links
+[ColorChanger on Github](https://github.com/jadefish/colorchanger)
 @endsection

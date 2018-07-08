@@ -23,4 +23,7 @@ spins up [nginx](https://nginx.org/en/) and php-fpm services to emulate the
 
 Internally, the site simply renders markdown files as Blade templates,
 displaying them based on the current path.
+
+## Links
+[nmiller.info on Github](https://github.com/jadefish/nmiller.info)
 @endsection
