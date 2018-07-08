@@ -5,16 +5,12 @@
 
 # Project: ColorChanger
 
-<ul class="list-horizontal">
-    <li><a href="https://github.com/jadefish/colorchanger">ColorChanger on GitHub</a></li>
-</ul>
-
 ## Overview
 **ColorChanger** is a small utility for Windows which rotates through a user-
 defined list of opaque colors, applying each to the system's window
 colorization.
 
-ColorChanges runs unobtrusively in the system tray, displaying the current
+ColorChanger runs unobtrusively in the system tray, displaying the current
 window color as its icon. It will rotate through window colors (if desired)
 without any input or interruption. It is written in C# and utilizes a lot
 of WinAPI calls.
