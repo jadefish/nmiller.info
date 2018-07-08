@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal website of software engineer Nick Miller" />
     <title>@yield('title') - nmiller.info</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" href="/images/favicon.png">
