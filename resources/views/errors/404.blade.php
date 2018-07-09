@@ -3,5 +3,5 @@
 
 @section('content')
 <h1>404: Not found</h1>
-<p>The requested page was not found.</p>
+<h2>The requested page was not found.</h2>
 @endsection
