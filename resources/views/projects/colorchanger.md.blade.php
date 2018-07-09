@@ -15,7 +15,7 @@ window color as its icon. It will rotate through window colors (if desired)
 without any input or interruption. It is written in C# and utilizes a lot
 of WinAPI calls.
 
-![Picture of ColorChanger](/images/projects/colorchanger.png "ColorChanger")
+![Picture of ColorChanger](/images/projects/ColorChanger.png "ColorChanger")
 
 ## Rationale
 Windows offers similar built-in functionality, but uses the current desktop
