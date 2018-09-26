@@ -7,8 +7,7 @@
 
 ## About
 You've reached the personal website of Nick Miller. I'm a software engineer
-currently doing back end stuff for
-[MacUpdate.com](https://www.macupdate.com).
+currently writing Ruby at [GeoTix](http://www.geotix.com).
 
 For the past 15 years, I've been constantly writing code and have loved every
 minute of it. I'm self-starting, motivated, and always looking to improve
