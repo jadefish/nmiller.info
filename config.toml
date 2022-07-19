@@ -1,0 +1,5 @@
+baseURL = 'https://nmiller.info'
+languageCode = 'en-us'
+title = 'nmiller.info'
+disableHugoGeneratorInject = true
+# no theme; see /layouts

@@ -1,0 +1,58 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4285714286;
+}
+
+.bg-dark {
+    background: rgb(40, 40, 40);
+}
+
+.bg-light {
+    background: rgb(250, 248, 244);
+}
+
+.fg-dark {
+    color: rgb(40, 40, 40);
+}
+
+.fg-light {
+    color: rgb(250, 248, 244);
+}
+
+a {
+    color: rgb(21, 101, 193);
+}
+
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.row {
+    max-width: 34em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+li > p,
+footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p img {
+    max-width: 100%;
+}
