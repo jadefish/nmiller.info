@@ -1,0 +1,24 @@
+{{- $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
+<!DOCTYPE html>
+<html lang="en" class="bg-dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Personal website of software engineer Nick Miller" />
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="shortcut icon" href="/favicon.png">
+</head>
+<body class="bg-light fg-dark">
+    <main class="row">
+        {{- block "main" . -}}
+            {{- .Content -}}
+        {{- end -}}
+    </main>
+    <footer class="bg-dark fg-light">
+        <div class="row">
+            <span>&copy; {{ now.Year }} Nick Miller</span>
+        </div>
+    </footer>
+</body>
+</html>
