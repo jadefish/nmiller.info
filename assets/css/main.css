@@ -1,38 +1,20 @@
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: border-box;
+}
+
+:root {
+    color-scheme: light dark;
 }
 
 html {
     font-size: 100%;
+    line-height: 1.314159265359;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
-    font-size: 1rem;
-    line-height: 1.4285714286;
-}
-
-.bg-dark {
-    background: rgb(40, 40, 40);
-}
-
-.bg-light {
-    background: rgb(250, 248, 244);
-}
-
-.fg-dark {
-    color: rgb(40, 40, 40);
-}
-
-.fg-light {
-    color: rgb(250, 248, 244);
-}
-
-a {
-    color: rgb(21, 101, 193);
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 img {
@@ -40,8 +22,13 @@ img {
     vertical-align: middle;
 }
 
+footer {
+    font-size: 80%;
+    opacity: 0.70;
+}
+
 .row {
-    max-width: 34em;
+    max-width: 34rem;
     margin-left: auto;
     margin-right: auto;
     padding: 1em;

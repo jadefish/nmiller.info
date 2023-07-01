@@ -1,6 +1,6 @@
 {{- $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
 <!DOCTYPE html>
-<html lang="en" class="bg-dark">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="shortcut icon" href="/favicon.png">
 </head>
-<body class="bg-light fg-dark">
+<body>
     <main class="row">
         {{- block "main" . -}}
             {{- .Content -}}
         {{- end -}}
     </main>
-    <footer class="bg-dark fg-light">
+    <footer>
         <div class="row">
             <span>&copy; {{ now.Year }} Nick Miller</span>
         </div>
