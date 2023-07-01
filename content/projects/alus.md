@@ -1,3 +1,6 @@
+---
+title: "Project: alus"
+---
 # Project: alus
 
 ## Overview

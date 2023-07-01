@@ -1,3 +1,6 @@
+---
+title: "Project: ladu"
+---
 # Project: ladu
 
 ## Overview

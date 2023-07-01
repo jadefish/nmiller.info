@@ -1,3 +1,6 @@
+---
+title: "Project: nmiller.info"
+---
 # Project: nmiller.info
 
 **nmiller.info** is my personal website. It's written in PHP and is built on

@@ -1,3 +1,6 @@
+---
+title: "Project: solarized-simple"
+---
 # Project: solarized-simple
 
 ## Overview
