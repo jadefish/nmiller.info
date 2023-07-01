@@ -1,3 +1,6 @@
+---
+title: "Project: FileRenamer"
+---
 # Project: FileRenamer
 
 ## Overview
