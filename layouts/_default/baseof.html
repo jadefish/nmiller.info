@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Personal website of software engineer Nick Miller" />
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    {{ if isset .Params "title" }}
+        <title>{{ index .Params "title" }} - {{ .Site.Title }}</title>
+    {{ else }}
+        <title>{{ .Site.Title }}</title>
+    {{ end }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="shortcut icon" href="/favicon.png">
 </head>
